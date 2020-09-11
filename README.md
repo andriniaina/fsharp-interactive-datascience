@@ -13,7 +13,7 @@
 ## Built-in features
 
 * Register "rich output" printers to FSI
-* Render plotly charts, [SVG plots](https://pablofrommars.github.io), HTML fragments, Markdown and text cells
+* Render plotly charts, latex expressions, [SVG plots](https://pablofrommars.github.io), HTML fragments, Markdown and text cells
 * Export Notebooks to HTML
 
 
@@ -63,6 +63,7 @@ You can now start coding in an *.fsx file.
 Notebook.Markdown """
 # Hello, Markdown!
 """
+Notebook.Markdown @"This is cool $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$ isn't it"
 
 // display primitive values
 Notebook.Text (1+1)

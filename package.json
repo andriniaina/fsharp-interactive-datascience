@@ -3,7 +3,7 @@
 	"displayName": "F# Notebook+DataScience",
 	"description": "Data Science Notebook for F# interactive with preconfigured printers for dataframes and plotly",
 	"publisher": "andriniaina",
-	"version": "1.0.11",
+	"version": "1.0.12",
 	"license": "MIT",
 	"author": {
 		"name": "Andri Rakotomalala",
