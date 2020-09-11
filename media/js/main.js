@@ -251,6 +251,9 @@ function Clear() {
 	window.addEventListener('message', event => {
 		const message = event.data;
 		switch (message.command) {
+			case 'mathjax_typeset':
+				MathJax.typeset();
+				break;
 			case 'append':
 				createCell(message.id, message.type, message.content);
 				window.scrollTo({ top:document.body.scrollHeight, behavior: 'smooth', })

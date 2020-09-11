@@ -194,6 +194,11 @@ class NotebookPanel {
 				type: type,
 				content: content 
 			});
+			if(ext == '.md') {
+				await this._panel.webview.postMessage({ 
+					command: 'mathjax_typeset'
+				});
+			}
 		});
 	}
 	
@@ -248,9 +253,21 @@ class NotebookPanel {
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			${styles.join('\n')}
 			<title>Notebook</title>
+			<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 			<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
 			<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-		</head>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+			<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+			</head>
 		<body>
 			<div id="cells"></div>
 			<script src="${script}"></script>
